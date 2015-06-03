@@ -3,9 +3,11 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'
-# Use sqlite3 as the database for Active Record
-# gem 'sqlite3', '>= 1.3.10'
+# Use postgresql as the database for Active Record
 gem 'pg'
+
+#gem 'puma' ,group: [:production]
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -34,7 +36,13 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # gem 'capistrano-rails', group: :development
 
 # Use debugger
-# gem 'debugger', group: [:development, :test]
+gem 'byebug', group: [:development, :test]
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin]
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
+
+# Use authentication
+gem 'devise'
+
+# For gravatar
+gem 'gravatarify', '~> 3.0.0'
