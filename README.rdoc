@@ -1,3 +1,14 @@
-== ShoppingCartExampleApp
+== ETSShop
 
-See http://richonrails.com/articles/building-a-shopping-cart-in-ruby-on-rails for details
+To run this, run
+set DATABASE_URL=<database_data_production>
+set DATABASE_URL_DEV=<database_data_development>
+set DATABASE_URL_TEST=<database_data_test>
+set SECRET_KEY_BASE=2c686965049105791547abcdaff6727ce7d4c0d3f7716613ee96eb5281698bed701b1a767e40c10d718f03a69445f3eebedd8241bd55752dec62c796369e78f4
+set RAILS_ENV=production
+set RAKE_ENV=production
+bundle install
+rake db:setup
+rails server
+
+Access now to http://localhost:3000
