@@ -1,0 +1,6 @@
+<% if selected_category == category.id %>
+
+    <li class="active"><a href="#"> <%= category.name %> <span class="badge"><%= all_products%></span></a></li>
+<% else %>
+    <li><a href="#"> <%= category.name %> <span class="badge"><%= category.products.count%></span></a></li>
+<% end %>

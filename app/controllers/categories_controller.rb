@@ -1,15 +1,18 @@
-class ProductsController < ApplicationController
+class CategoriesController < ApplicationController
   include CategoriesHelper
-
   helper_method :selected_category
   def index
-    @products = Product.all
     categories_list
+    selected_category
+  end
 
-    @order_item = current_order.order_items.new
-
+  def show
+    categories_list
   end
   def selected_category
     session_selected_category
   end
+
+
+
 end
