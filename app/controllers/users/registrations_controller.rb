@@ -40,12 +40,12 @@ skip_before_filter :verify_authenticity_token, :only => :create
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
-     devise_parameter_sanitizer.for(:sign_up) << :address
+     devise_parameter_sanitizer.for(:sign_up) << [:address, :name]
    end
 
   # If you have extra params to permit, append them to the sanitizer.
    def configure_account_update_params
-     devise_parameter_sanitizer.for(:account_update) << :address
+     devise_parameter_sanitizer.for(:account_update) << [:address , :name]
    end
 
   # The path used after sign up.
@@ -58,7 +58,7 @@ skip_before_filter :verify_authenticity_token, :only => :create
   #   super(resource)
   # end
 def configure_permitted_parameters
-  devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:name, :email, :password, :address) }
-  devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:name, :email, :password, :current_password,:address) }
+  devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:name, :email, :password, :address, :name) }
+  devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:name, :email, :password, :current_password,:address,:name) }
 end
 end

@@ -1,20 +1,10 @@
 .footer {
-    position: fixed;
+    position: relative;
     bottom: 0;
     width: 100%;
     /* Set the fixed height of the footer here */
-    height: 80px;
+    height: 60px;
     background-color: #f5f5f5;
-    background-repeat: repeat;
-    background-attachment: scroll;
-    background-position: 0% 0%;
-}
-
-.footer_contents {
-
-    height:24px; // Replace with the height your footer should be
-width: 1000px; // Visible width of footer
-margin:auto;
 
 }
 .page-row {
