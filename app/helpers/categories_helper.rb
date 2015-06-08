@@ -8,6 +8,8 @@ module CategoriesHelper
       session[:category_id] = Category.first.id
     else
       session[:category_id]
+
+
     end
   end
 end

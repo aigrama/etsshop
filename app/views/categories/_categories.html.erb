@@ -14,7 +14,7 @@
         <ul class="nav navbar-nav">
           <% all_products=@products.count %>
           <% @categories.each do |cat| %>
-              <%= render "categories/category_row", category: cat, all_products:all_products %>
+              <%= render "categories/category_row", category: cat, all_products:all_products,sc:@sc %>
           <% end %>
         </ul>
       </div><!-- /.nav-collapse -->

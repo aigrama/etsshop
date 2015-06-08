@@ -3,10 +3,17 @@ class ProductsController < ApplicationController
 
   helper_method :selected_category
   def index
-    @products = Product.all
-    categories_list
 
+    categories_list
+    selected_category
     @order_item = current_order.order_items.new
+
+    
+    if session[:category_id] == 0
+      @products = Product.all
+    else
+      @products = Product.from_category(session[:category_id])
+    end
 
   end
   def selected_category

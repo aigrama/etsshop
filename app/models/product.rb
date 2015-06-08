@@ -3,6 +3,7 @@ class Product < ActiveRecord::Base
   belongs_to :category,:foreign_key => 'categories_id'
   validate :category_present
   validate :category_different_from_all
+  scope :from_category, -> (cat_id) { where categories_id: cat_id }
 
 private
   def category_present

@@ -1,6 +1,15 @@
-<% if selected_category == category.id %>
+<% if session[:category_id]  == category.id %>
 
-    <li class="active"><a href="#"> <%= category.name %> <span class="badge"><%= all_products%></span></a></li>
+    <% if category.id == 0 %>
+        <li class="active"><a href="<%=url_for(category)%>"> <%= category.name %> <span class="badge"><%= all_products %></span></a></li>
+    <%else %>
+        <li class="active"><a href="<%=url_for(category)%>"> <%= category.name %> <span class="badge"><%= category.products.count %></span></a></li>
+    <%end%>
+
 <% else %>
-    <li><a href="#"> <%= category.name %> <span class="badge"><%= category.products.count%></span></a></li>
+    <% if category.id == 0 %>
+        <li><a href="<%=url_for(category)%>"> <%= category.name %> <span class="badge"><%= all_products %></span></a></li>
+    <%else %>
+        <li><a href="<%=url_for(category)%>"> <%= category.name %> <span class="badge"><%= category.products.count %></span></a></li>
+    <%end%>
 <% end %>
