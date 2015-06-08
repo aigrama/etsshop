@@ -15,4 +15,17 @@
   <% @order_items.each do |order_item| %>
     <%= render 'carts/cart_row', product: order_item.product, order_item: order_item, show_total: true %>
   <% end %>
-<% end %>
+    <% if user_signed_in? %>
+        <br><br>
+        <div class="row">
+          <div class="col-xs-6">
+            <h2 class="text-right">Shipping to: </h2>
+          </div>
+          <div class="col-xs-6">
+            <div class="well">
+              <h4 class="text-center"><%= current_user.address %></h4>
+            </div>
+          </div>
+    <%end%>
+<%end%>
+

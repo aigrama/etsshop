@@ -1,16 +1,16 @@
 class Users::RegistrationsController < Devise::RegistrationsController
-# before_filter :configure_sign_up_params, only: [:create]
-# before_filter :configure_account_update_params, only: [:update]
+ before_filter :configure_sign_up_params, only: [:create]
+ before_filter :configure_account_update_params, only: [:update]
 skip_before_filter :verify_authenticity_token, :only => :create
   # GET /resource/sign_up
-  # def new
-  #   super
-  # end
+   def new
+     super
+   end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+   def create
+     super
+   end
 
   # GET /resource/edit
   # def edit
@@ -18,9 +18,9 @@ skip_before_filter :verify_authenticity_token, :only => :create
   # end
 
   # PUT /resource
-  # def update
-  #   super
-  # end
+  def update
+     super
+  end
 
   # DELETE /resource
   # def destroy
@@ -39,14 +39,14 @@ skip_before_filter :verify_authenticity_token, :only => :create
   # protected
 
   # If you have extra params to permit, append them to the sanitizer.
-  # def configure_sign_up_params
-  #   devise_parameter_sanitizer.for(:sign_up) << :attribute
-  # end
+  def configure_sign_up_params
+     devise_parameter_sanitizer.for(:sign_up) << :address
+   end
 
   # If you have extra params to permit, append them to the sanitizer.
-  # def configure_account_update_params
-  #   devise_parameter_sanitizer.for(:account_update) << :attribute
-  # end
+   def configure_account_update_params
+     devise_parameter_sanitizer.for(:account_update) << :address
+   end
 
   # The path used after sign up.
   # def after_sign_up_path_for(resource)
@@ -57,4 +57,8 @@ skip_before_filter :verify_authenticity_token, :only => :create
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
+def configure_permitted_parameters
+  devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:name, :email, :password, :address) }
+  devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:name, :email, :password, :current_password,:address) }
+end
 end
