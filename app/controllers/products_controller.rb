@@ -14,6 +14,7 @@ class ProductsController < ApplicationController
     else
       @products = Product.from_category(session[:category_id])
     end
+    @all_products = Product.count
 
   end
   def selected_category
