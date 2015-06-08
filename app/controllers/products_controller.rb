@@ -8,7 +8,7 @@ class ProductsController < ApplicationController
     selected_category
     @order_item = current_order.order_items.new
 
-    
+
     if session[:category_id] == 0
       @products = Product.all
     else

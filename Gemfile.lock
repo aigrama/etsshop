@@ -56,9 +56,9 @@ GEM
     gravatarify (3.0.0)
     hike (1.2.3)
     i18n (0.7.0)
-    jbuilder (2.2.16)
-      activesupport (>= 3.0.0, < 5)
-      multi_json (~> 1.2)
+    jbuilder (1.5.3)
+      activesupport (>= 3.0.0)
+      multi_json (>= 1.2.0)
     jquery-rails (3.1.2)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
@@ -136,7 +136,7 @@ DEPENDENCIES
   devise
   font-awesome-rails
   gravatarify (~> 3.0.0)
-  jbuilder (~> 2.0)
+  jbuilder (~> 1.2)
   jquery-rails
   pg
   rails (= 4.1.6)
